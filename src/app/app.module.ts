@@ -4,15 +4,21 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-
+import { MaterialModule } from '@angular/material';
+import 'hammerjs';
+import { ResultComponent } from './result/result.component';
+import { CalculatorComponent } from './calculator/calculator.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ResultComponent,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MaterialModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
