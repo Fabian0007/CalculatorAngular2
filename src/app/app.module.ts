@@ -18,7 +18,7 @@ import { TaxboardComponent } from './taxboard/taxboard.component';
     ResultComponent,
     CalculatorComponent,
     HomeComponent,
-    TaxboardComponent
+    TaxboardComponent,
   ],
   imports: [
     BrowserModule,
