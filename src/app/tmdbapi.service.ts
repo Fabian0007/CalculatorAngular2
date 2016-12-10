@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Location} from '@angular/common';
 import {Http} from '@angular/http';
+import {Observable} from 'rxjs';
 
 @Injectable()
 export class TMDBAPIService {
@@ -8,9 +9,20 @@ export class TMDBAPIService {
     apiUrl: string = '//api.themoviedb.org/';
     apiKey: string = '802cd9bec58e75474a66bfa717fd1106';
     apiImg: string = '//image.tmdb.org/t/p/w500';
+    baseUrl:string =  "https://api.themoviedb.org/3/movie/popular";
     constructor(private http:Http) {
-
+    
+        
     }
+      
+     
+     get():Observable<any>{
+         return this.http.get(`${this.baseUrl}?api_key=${this.apiKey}`)
+         .map((response) =>
+             response.json()
+         );
+     };
+      
       
     _normalizeEndpoint() {
         return {'url': this.apiUrl + 3,

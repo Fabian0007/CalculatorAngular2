@@ -12,6 +12,8 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { HomeComponent } from './home/home.component';
 import { TaxboardComponent } from './taxboard/taxboard.component';
 
+import {TMDBAPIService} from './tmdbapi.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,7 @@ import { TaxboardComponent } from './taxboard/taxboard.component';
     MaterialModule.forRoot(),
     RouterModule.forRoot(ROUTES, { useHash: true }),
   ],
-  providers: [],
+  providers: [TMDBAPIService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
